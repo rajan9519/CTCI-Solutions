@@ -1,14 +1,20 @@
 /*
-** Note all these function have the same name so before renning the program 
-** comment out the other functions 
+    ** Note all these function have the same name so before renning the program
+    ** comment out the other functions
 
-** BooK: Cracking the coding Interview.
+    ** Book: Cracking the coding Interview.
 
-** Code: Rajan Kumar singh(rajan9519)
+    ** Code: Rajan Kumar singh(rajan9519)
 
-** Email: rajankumarsinghvnit@gmail.com
+    ** Email: rajankumarsinghvnit@gmail.com
+*/
+
+/*
+   Q: Is Unique: Implement an algorithm to determine if a string has all unique characters. What if you
+    cannot use additional data structures?
 */
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -29,9 +35,10 @@ bool isUniqueChars(string str)
     return true;
 }
 // * O(N*log(N)) time complexity and space depends on sorting algorithm used
+
 bool isUniqueChars(string str)
 {
-    str.sort();
+    sort(str.begin(), str.end());
     for (int i = 0; i < str.length() - 1; i++)
     {
         if (str[i] == str[i + 1])
@@ -72,15 +79,24 @@ bool isUniqueChars(string str)
     for (int i = 0; i < str.length(); i++)
     {
         index = (str[i] - 'a');
-        if (checker | (1 << index))
+        if (checker & (1 << index))
         {
             return false;
         }
-        checker |= (1 << index)
+        checker |= (1 << index);
     }
     return true;
 }
 
 int main()
 {
+    string str1 = "abcde", str2 = "asldkfhadsf";
+    if (isUniqueChars(str1))
+    {
+        cout << "Unique";
+    }
+    else
+    {
+        cout << "Not Unique";
+    }
 }
