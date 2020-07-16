@@ -1,3 +1,13 @@
+/*
+** Note all these function have the same name so before renning the program 
+** comment out the other functions 
+
+** BooK: Cracking the coding Interview.
+
+** Code: Rajan Kumar singh(rajan9519)
+
+** Email: rajankumarsinghvnit@gmail.com
+*/
 #include <iostream>
 
 using namespace std;
@@ -28,6 +38,45 @@ bool isUniqueChars(string str)
         {
             return false;
         }
+    }
+    return true;
+}
+// assuming ASCII characters only i.e 128 characters
+// time complexity O(N) space complexity O(1)
+bool isUniqueChars(string str)
+{
+    bool char_set[128];
+    for (int i = 0; i < str.length(); i++)
+    {
+        int index = str[i];
+        if (index)
+        {
+            return false;
+        }
+        char_set[index] = true;
+    }
+    return true;
+}
+
+// By Bit Manupulation.
+// Taking 32 bit interger, consequenty we can have atmost 32 different characters
+// we can take any one of lower case or Upper case english alphabets
+// as both of then have only 26 different characters
+// in this solution taking lower case 'a to z' alphabet
+
+bool isUniqueChars(string str)
+{
+
+    int checker = 0;
+    int index;
+    for (int i = 0; i < str.length(); i++)
+    {
+        index = (str[i] - 'a');
+        if (checker | (1 << index))
+        {
+            return false;
+        }
+        checker |= (1 << index)
     }
     return true;
 }
