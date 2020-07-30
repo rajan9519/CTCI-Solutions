@@ -1,10 +1,10 @@
 /*
-    ** Note all these function have the same name so before renning the program
+    ** Note all these function have the same name,so before renning the program
     ** comment out the other functions
 
-    ** Book: Cracking the coding Interview.
+    ** Book: Cracking the coding Interview by GAYLE LAAKMANN McDowELL.
 
-    ** Code: Rajan Kumar singh(rajan9519)
+    ** Code: Rajan Kumar Singh(rajan9519)
 
     ** Email: rajankumarsinghvnit@gmail.com
 */
@@ -99,4 +99,5 @@ int main()
     {
         cout << "Not Unique";
     }
+    return 0;
 }
