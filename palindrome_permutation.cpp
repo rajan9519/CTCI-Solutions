@@ -1,5 +1,5 @@
 /*
-    ** Note all these function have the same name,so before renning the program
+    ** Note all these function have the same name,so before running the program
     ** comment out the other functions
 
     ** Book: Cracking the coding Interview by GAYLE LAAKMANN McDowELL.
